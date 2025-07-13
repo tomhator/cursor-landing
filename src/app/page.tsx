@@ -4,12 +4,9 @@ import React, { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { 
   Users, 
-  Trophy, 
   MapPin, 
   Clock, 
   Star, 
-  ChevronRight, 
-  ChevronLeft,
   Instagram,
   MessageCircle,
   Download,
@@ -19,8 +16,6 @@ import {
 
 const RunningCrewLanding: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 1000], [0, 200]);
 
@@ -125,7 +120,7 @@ const RunningCrewLanding: React.FC = () => {
   };
 
   return (
-    <div className={`min-h-screen ${isDarkMode ? 'dark bg-gray-900' : 'bg-white'}`}>
+    <div className="min-h-screen bg-white">
       {/* 네비게이션 바 */}
       <motion.header 
         initial={{ y: -100 }}
